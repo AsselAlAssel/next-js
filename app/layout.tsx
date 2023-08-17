@@ -1,9 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import NAV from "@/components/nav";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <NAV />
-        <main>{children}</main>
+      <body>
+        <header className="fixed w-full h-[30px] bg-gray-500 p-2 box-content"></header>
+        <main className="pt-[50px]">{children}</main>
       </body>
     </html>
   );
