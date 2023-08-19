@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="dark:prose-invert">home</div>;
+  return <div className="">home</div>;
 }

@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import React from "react";
+import { Provider } from "@/app/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,8 +29,10 @@ export default function RootLayout({
       </head>
 
       <body>
-        <Nav />
-        <main className="pt-1 px-1">{children}</main>
+        <Provider>
+          <Nav />
+          <main className="pt-1 px-1">{children}</main>
+        </Provider>
       </body>
     </html>
   );
