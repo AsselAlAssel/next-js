@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useTheme } from "next-themes";
@@ -15,23 +15,23 @@ const ThemeButtons = () => {
   if (!mounted) return null;
 
   return (
-    <div>
-      <IconButton className={"hover:bg-none"}>
-        {theme === "light" ? (
-          <DarkModeIcon
-            onClick={() => setTheme("dark")}
-            className="text-gra-400 hover:text-gray-900 hover:bg-none"
-            fontSize="small"
-          />
-        ) : (
-          <LightModeIcon
-            onClick={() => setTheme("light")}
-            className="text-white hover:text-amber-400 hover:bg-none"
-            fontSize="small"
-          />
-        )}
-      </IconButton>
-    </div>
+    <Button
+      className={` rounded-full
+      hover:bg-transparent
+      ${
+        theme === "light"
+          ? "text-gray-500 hover:text-black"
+          : "text-white hover:text-amber-400"
+      }`}
+      variant={"text"}
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+    >
+      {theme === "light" ? (
+        <DarkModeIcon fontSize="small" />
+      ) : (
+        <LightModeIcon fontSize="small" />
+      )}
+    </Button>
   );
 };
 
