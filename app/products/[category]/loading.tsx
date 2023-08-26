@@ -8,26 +8,16 @@ const Loading = () => {
         {arr.map((item) => (
           <div key={item}>
             <div className="dark:hidden">
-              <div className="card__image ">
-                <Skeleton
-                  variant="rounded"
-                  height={150}
-                  className="w-full"
-                  classes="dark:bg-gray-800"
-                />
+              <div>
+                <Skeleton variant="rounded" height={150} className="w-full" />
               </div>
               <div>
                 <Skeleton variant="text" height={40} />
-                <Skeleton
-                  variant="text"
-                  width={40}
-                  height={30}
-                  classes="dark:bg-gray-800"
-                />
+                <Skeleton variant="text" width={40} height={30} />
               </div>
             </div>
-            <div className="light:hidden">
-              <div className="card__image ">
+            <div className="hidden dark:block">
+              <div>
                 <Skeleton
                   variant="rounded"
                   height={150}
